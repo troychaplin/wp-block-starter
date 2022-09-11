@@ -1,5 +1,12 @@
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
-export default function save() {
-	return <p { ...useBlockProps.save() }>Example block one: save.js</p>;
+export default function save({attributes}) {
+    const {text} = attributes;
+    return (
+        <RichText.Content
+            {...useBlockProps.save()}
+            tagName="p"
+            value={text}
+        />
+    );
 }
