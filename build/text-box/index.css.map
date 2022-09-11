@@ -1,0 +1,1 @@
+{"version":3,"file":"text-box/index.css","mappings":";;;AAAA;EACC;AACD,C","sources":["webpack://wp-block-starter/./src/text-box/editor.scss"],"sourcesContent":[".wp-block-create-block-text-box {\n\tborder: 1px dotted #f00;\n}\n"],"names":[],"sourceRoot":""}
