@@ -15,6 +15,7 @@
 
 function create_block_wp_block_starter_block_init()
 {
-    register_block_type(__DIR__ . '/build');
+    register_block_type(__DIR__ . '/build/example-one');
+    register_block_type(__DIR__ . '/build/example-two');
 }
 add_action('init', 'create_block_wp_block_starter_block_init');

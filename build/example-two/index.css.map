@@ -1,0 +1,1 @@
+{"version":3,"file":"example-two/index.css","mappings":";;;AAAA;EACC;AACD,C","sources":["webpack://wp-block-starter/./src/example-two/editor.scss"],"sourcesContent":[".wp-block-create-block-example-two {\n\tborder: 1px dotted #f00;\n}\n"],"names":[],"sourceRoot":""}

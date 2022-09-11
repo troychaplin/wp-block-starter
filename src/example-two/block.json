@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "starter-block/example-two",
+	"version": "0.1.0",
+	"title": "Example Two",
+	"category": "text",
+	"icon": "admin-post",
+	"description": "Example block two",
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
