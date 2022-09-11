@@ -5,7 +5,6 @@
 	"version": "0.1.0",
 	"title": "Text Box",
 	"category": "text",
-	"icon": "text",
 	"description": "Text box",
 	"keywords": [ "text", "paragraph", "box" ],
 	"supports": {
