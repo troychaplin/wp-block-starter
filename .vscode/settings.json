@@ -8,8 +8,8 @@
 	"phpcbf.enable": true,
 	"phpcs.executablePath": "/opt/homebrew/bin/phpcs",
 	"phpcbf.executablePath": "/opt/homebrew/bin/phpcbf",
-	"phpcs.standard": "PSR2",
-	"phpcbf.standard": "PSR2",
+	"phpcs.standard": "PSR12",
+	"phpcbf.standard": "PSR12",
 	"phpcbf.documentFormattingProvider": true,
 	"[php]": {
 		"editor.tabSize": 4,
