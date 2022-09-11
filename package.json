@@ -14,7 +14,28 @@
 		"plugin-zip": "wp-scripts plugin-zip",
 		"start": "wp-scripts start"
 	},
+	"prettier": "@wordpress/prettier-config",
+	"stylelint": {
+		"extends": "@wordpress/stylelint-config/scss"
+	},
+	"lint-staged": {
+		"*.js": [
+			"wp-scripts lint-js",
+			"wp-scripts format"
+		],
+		"*.scss": "npx stylelint --fix"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^9.8.0",
+		"@wordpress/blocks": "^11.15.0"
+	},
 	"devDependencies": {
-		"@wordpress/scripts": "^24.0.0"
+		"@wordpress/eslint-plugin": "^13.0.0",
+		"@wordpress/prettier-config": "^2.0.0",
+		"@wordpress/scripts": "^24.0.0",
+		"@wordpress/stylelint-config": "^21.0.0",
+		"eslint-config-prettier": "^8.5.0",
+		"husky": "^8.0.1",
+		"lint-staged": "^13.0.3"
 	}
 }
