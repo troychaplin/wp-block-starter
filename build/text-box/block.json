@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "title": "Text Box",
   "category": "text",
-  "description": "Text box",
+  "description": "Custom made text box block to give examples of some of the editor element and wp components in a custom block.",
   "keywords": [
     "text",
     "paragraph",
@@ -26,6 +26,10 @@
     "alignment": {
       "type": "string",
       "default": "left"
+    },
+    "toggle": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
