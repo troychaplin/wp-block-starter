@@ -1,0 +1,17 @@
+// .starter-text-box
+.wp-block-starter-block-text-box {
+	border: 5px dotted red;
+	padding: 12px;
+
+	&.text-box-align-right {
+		text-align: right;
+	}
+
+	&.text-box-align-left {
+		text-align: left;
+	}
+
+	&.text-box-align-center {
+		text-align: center;
+	}
+}

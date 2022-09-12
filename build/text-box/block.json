@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "starter-block/text-box",
+  "version": "0.1.0",
+  "title": "Text Box",
+  "category": "text",
+  "description": "Custom made text box block to give examples of some of the editor element and wp components in a custom block.",
+  "keywords": [
+    "text",
+    "paragraph",
+    "box"
+  ],
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "text": {
+      "type": "string",
+      "source": "html",
+      "selector": "p"
+    },
+    "alignment": {
+      "type": "string",
+      "default": "left"
+    },
+    "toggle": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
