@@ -16,23 +16,17 @@ export default function Edit({attributes, setAttributes}) {
             <BlockControls>
                 <AlignmentToolbar value={alignment} onChange={onChangeAlignment} />
             </BlockControls>
-            {/* <BlockControls
+            <BlockControls
                 // Less flexible than ToolbarGroup & ToolbarButton components
                 // This method of setting controls only allows for buttons
                 controls={[
                     {
-                        title: "Undo",
-                        icon: "undo",
-                        onClick: () => console.log("Button 1 clicked")
-                    },
-                    {
-                        title: "Settings",
-                        icon: "admin-settings",
-                        isActive: true,
-                        onClick: () => console.log("Button 2 clicked")
+                        title: "Custom",
+                        icon: "lightbulb",
+                        onClick: () => console.log("Custom button clicked")
                     }
                 ]}
-            /> */}
+            />
             <RichText
                 {...useBlockProps({
                     className: `text-box-align-${alignment}`
@@ -42,7 +36,6 @@ export default function Edit({attributes, setAttributes}) {
                 placeholder={'Add some text for your block'}
                 tagName="p"
                 allowedFormats={[ 'core/bold', 'core/italic' ]}
-                // style={{textAlign: alignment}}
             />
         </>
     );
