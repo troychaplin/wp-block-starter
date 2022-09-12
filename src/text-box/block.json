@@ -6,7 +6,7 @@
 	"title": "Text Box",
 	"category": "text",
 	"description": "Custom made text box block to give examples of some of the editor element and wp components in a custom block.",
-	"keywords": [ "text", "paragraph", "box" ],
+	"keywords": [ "custom", "text", "paragraph", "box" ],
 	"supports": {
 		"html": false
 	},

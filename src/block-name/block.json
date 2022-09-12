@@ -1,12 +1,13 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "starter-block/example-one",
+	"name": "starter-block/block-name",
 	"version": "0.1.0",
-	"title": "Example One",
+	"title": "Block Name",
 	"category": "text",
-	"icon": "smiley",
-	"description": "Example block one",
+	"icon": "insert",
+	"description": "Description of the block",
+	"keywords": [ "custom", "template", "example" ],
 	"supports": {
 		"html": false
 	},

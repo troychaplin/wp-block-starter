@@ -68,9 +68,10 @@ export default function Edit({attributes, setAttributes}) {
             <BlockControls>
                 <AlignmentToolbar value={alignment} onChange={onChangeAlignment} />
             </BlockControls>
+
             <BlockControls
-                // Less flexible than ToolbarGroup & ToolbarButton components
-                // This method of setting controls only allows for buttons
+                // This method of setting controls only allows for buttons,
+                // not as flexible as components inside block contols
                 controls={[
                     {
                         title: "Custom",

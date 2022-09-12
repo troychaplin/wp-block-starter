@@ -99,8 +99,8 @@ function Edit(_ref) {
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
     value: alignment,
     onChange: onChangeAlignment
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls // Less flexible than ToolbarGroup & ToolbarButton components
-  // This method of setting controls only allows for buttons
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls // This method of setting controls only allows for buttons,
+  // not as flexible as components inside block contols
   , {
     controls: [{
       title: "Custom",
@@ -148,9 +148,7 @@ __webpack_require__.r(__webpack_exports__);
       viewBox: "0 0 448 512"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
       d: "M342.4 32c25.3 0 48.2 14.9 58.5 38.01l41.6 93.59c3.6 8.2 5.5 17 5.5 26V416c0 35.3-28.7 64-64 64H64c-35.35 0-64-28.7-64-64V189.6c0-9 1.879-17.8 5.516-26L47.11 70.01C57.38 46.89 80.3 32 105.6 32h236.8zm0 32H240v96h165.9l-34.2-77c-5.2-11.55-16.6-19-29.3-19zM416 192H32v224c0 17.7 14.33 32 32 32h320c17.7 0 32-14.3 32-32V192zM42.13 160H208V64H105.6c-12.65 0-24.11 7.45-29.25 19l-34.22 77z"
-    })),
-    background: "white",
-    foreground: "#ff0000"
+    }))
   },
   edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
   save: _save__WEBPACK_IMPORTED_MODULE_4__["default"]
@@ -293,7 +291,7 @@ function _extends() {
   \*********************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"starter-block/text-box","version":"0.1.0","title":"Text Box","category":"text","description":"Custom made text box block to give examples of some of the editor element and wp components in a custom block.","keywords":["text","paragraph","box"],"supports":{"html":false},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"text":{"type":"string","source":"html","selector":"p"},"alignment":{"type":"string","default":"left"},"toggle":{"type":"boolean","default":false}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"starter-block/text-box","version":"0.1.0","title":"Text Box","category":"text","description":"Custom made text box block to give examples of some of the editor element and wp components in a custom block.","keywords":["custom","text","paragraph","box"],"supports":{"html":false},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"text":{"type":"string","source":"html","selector":"p"},"alignment":{"type":"string","default":"left"},"toggle":{"type":"boolean","default":false}}}');
 
 /***/ })
 
