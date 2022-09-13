@@ -1,0 +1,1 @@
+{"version":3,"file":"block-name/style-index.css","mappings":";;;AAAA;EACC;EACA;EACA;AACD,C","sources":["webpack://wp-block-starter/./src/block-name/style.scss"],"sourcesContent":[".wp-block-starter-block-block-name {\n\tbackground-color: #21759b;\n\tcolor: #fff;\n\tpadding: 2px;\n}\n"],"names":[],"sourceRoot":""}

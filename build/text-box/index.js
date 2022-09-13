@@ -23,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ // import { useState } from '@wordpress/element';
 
 
 function Edit(_ref) {
@@ -31,12 +31,13 @@ function Edit(_ref) {
     attributes,
     setAttributes
   } = _ref;
-  // const [color, setColor] = useState();
-  const [color, setColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('#f00');
+  // const [ color, setColor ] = useState ( '#f00' );
   const {
     text,
     alignment,
-    toggle
+    toggle,
+    backgroundColor,
+    textColor
   } = attributes;
   const colors = [{
     name: 'red',
@@ -67,6 +68,18 @@ function Edit(_ref) {
     });
   };
 
+  const onChangeBackgroundColor = newBgColor => {
+    setAttributes({
+      backgroundColor: newBgColor
+    });
+  };
+
+  const onChangeTextColor = newTextColor => {
+    setAttributes({
+      textColor: newTextColor
+    });
+  };
+
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: "Content",
     icon: "text",
@@ -85,15 +98,30 @@ function Edit(_ref) {
     label: "Toggle Label",
     checked: toggle,
     onChange: onChangeToggle
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: "Color Settings",
+    disableCustomColors: false,
+    colorSettings: [{
+      value: backgroundColor,
+      onChangeBackgroundColor,
+      label: "Background Color"
+    }, {
+      value: textColor,
+      onChangeTextColor,
+      label: "Text Color"
+    }]
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.ContrastChecker, {
+    textColor: textColor,
+    backgroundColor: backgroundColor
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Colors"
+    title: "Color Panel"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
     colors: colors,
-    value: color,
-    onChange: color => setColor(color)
+    value: backgroundColor,
+    onChange: onChangeBackgroundColor
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPicker, {
-    color: color,
-    onChange: setColor,
+    color: textColor,
+    onChange: onChangeTextColor,
     enableAlpha: true,
     defaultValue: "#000"
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
@@ -108,7 +136,11 @@ function Edit(_ref) {
       onClick: () => console.log("Custom button clicked")
     }]
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
-    className: `text-box-align-${alignment}`
+    className: `text-box-align-${alignment}`,
+    style: {
+      backgroundColor,
+      color: textColor
+    }
   }), {
     onChange: onChangeText,
     value: text,
@@ -180,10 +212,16 @@ function save(_ref) {
   } = _ref;
   const {
     text,
-    alignment
+    alignment,
+    backgroundColor,
+    textColor
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
-    className: `text-box-align-${alignment}`
+    className: `text-box-align-${alignment}`,
+    style: {
+      backgroundColor,
+      color: textColor
+    }
   }), {
     tagName: "p",
     value: text
@@ -291,7 +329,7 @@ function _extends() {
   \*********************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"starter-block/text-box","version":"0.1.0","title":"Text Box","category":"text","description":"Custom made text box block to give examples of some of the editor element and wp components in a custom block.","keywords":["custom","text","paragraph","box"],"supports":{"html":false},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"text":{"type":"string","source":"html","selector":"p"},"alignment":{"type":"string","default":"left"},"toggle":{"type":"boolean","default":false}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"starter-block/text-box","version":"0.1.0","title":"Text Box","category":"text","description":"Custom made text box block to give examples of some of the editor element and wp components in a custom block.","keywords":["custom","text","paragraph","box"],"supports":{"html":false},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"text":{"type":"string","source":"html","selector":"p"},"alignment":{"type":"string","default":"left"},"toggle":{"type":"boolean","default":false},"backgroundColor":{"type":"string"},"textColor":{"type":"string"}}}');
 
 /***/ })
 

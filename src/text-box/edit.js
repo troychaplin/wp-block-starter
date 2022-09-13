@@ -1,12 +1,26 @@
-import { useBlockProps, RichText, BlockControls, InspectorControls, AlignmentToolbar } from '@wordpress/block-editor';
-import { PanelBody, TextControl, TextareaControl, ToggleControl, ColorPicker, ColorPalette } from "@wordpress/components";
-import { useState } from '@wordpress/element';
+import {
+    useBlockProps,
+    RichText,
+    BlockControls,
+    InspectorControls,
+    AlignmentToolbar,
+    PanelColorSettings,
+    ContrastChecker
+} from '@wordpress/block-editor';
+import {
+    PanelBody,
+    TextControl,
+    TextareaControl,
+    ToggleControl,
+    ColorPicker,
+    ColorPalette
+} from "@wordpress/components";
+// import { useState } from '@wordpress/element';
 import './editor.scss';
 
 export default function Edit({attributes, setAttributes}) {
-    // const [color, setColor] = useState();
-    const [ color, setColor ] = useState ( '#f00' );
-    const { text, alignment, toggle } = attributes;
+    // const [ color, setColor ] = useState ( '#f00' );
+    const { text, alignment, toggle, backgroundColor, textColor } = attributes;
 
     const colors = [
 		{ name: 'red', color: '#f00' },
@@ -22,6 +36,12 @@ export default function Edit({attributes, setAttributes}) {
     }
     const onChangeToggle = (newToggle) => {
         setAttributes({toggle: newToggle})
+    }
+    const onChangeBackgroundColor = (newBgColor) => {
+        setAttributes({backgroundColor: newBgColor})
+    }
+    const onChangeTextColor = (newTextColor) => {
+        setAttributes({textColor: newTextColor})
     }
     
 	return (
@@ -50,15 +70,33 @@ export default function Edit({attributes, setAttributes}) {
                         onChange={onChangeToggle}
                     />
                 </PanelBody>
-                <PanelBody title={"Colors"}>
+                <PanelColorSettings
+                    title={"Color Settings"}
+                    disableCustomColors={false}
+                    colorSettings={[
+                        {
+                            value: backgroundColor,
+                            onChangeBackgroundColor,
+                            label: "Background Color"
+                        },
+                        {
+                            value: textColor,
+                            onChangeTextColor,
+                            label: "Text Color"
+                        }
+                    ]}
+                >
+                    <ContrastChecker textColor={textColor} backgroundColor={backgroundColor} />
+                </PanelColorSettings>
+                <PanelBody title={"Color Panel"}>
                     <ColorPalette
                         colors={colors}
-                        value={color}
-                        onChange={( color ) => setColor( color )}
+                        value={backgroundColor}
+                        onChange={onChangeBackgroundColor}
                     />
                     <ColorPicker 
-                        color={color}
-                        onChange={setColor}
+                        color={textColor}
+                        onChange={onChangeTextColor}
                         enableAlpha
                         defaultValue="#000"
                     />
@@ -83,7 +121,11 @@ export default function Edit({attributes, setAttributes}) {
 
             <RichText
                 {...useBlockProps({
-                    className: `text-box-align-${alignment}`
+                    className: `text-box-align-${alignment}`,
+                    style: {
+                        backgroundColor,
+                        color: textColor
+                    }
                 })}
                 onChange={onChangeText}
                 value={text}
